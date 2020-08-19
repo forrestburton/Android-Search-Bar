@@ -28,8 +28,15 @@ public class MainActivity extends AppCompatActivity /*implements AdapterView.OnI
     ListView lvUniversities;
     CustomAdapter universityAdapter;
 
-    int images[] = {R.drawable.ucla_logo, R.drawable.ucsb_logo, R.drawable.yale_logo, R.drawable.uw_logo, R.drawable.stanford_logo};
-    String names[] = {"University Of California, Los Angeles", "University of California, Berkeley", "Yale", "University of Washington", "Stanford"};
+    int images[] = {R.drawable.ucla_logo, R.drawable.ucsb_logo, R.drawable.yale_logo, R.drawable.udub_logo, R.drawable.stanford_logo,
+    R.drawable.westwash_logo, R.drawable.daffodil_logo, R.drawable.harvard_logo, R.drawable.alberta_logo, R.drawable.hopkins_logo,
+    R.drawable.unc_charlotte_logo, R.drawable.virgtech_logo, R.drawable.uiuc_logo, R.drawable.os_logo, R.drawable.texasam_logo,
+    R.drawable.northcarolina_logo, R.drawable.boston_logo, R.drawable.princeton_logo, R.drawable.berkeley_logo, R.drawable.chapman_logo};
+
+    String names[] = {"University Of California, Los Angeles", "University of California, Santa Barbara", "Yale", "University of Washington", "Stanford",
+    "Western Washington University", "Daffodil International University", "Harvard University", "University of Alberta", "Johns Hopkins University",
+    "UNC Charlotte", "Virginia Tech", "University of Illinois Urbana-Champaign", "Oregon State University", "Texas A&M University",
+    "North Carolina State University", "Boston University", "Princeton University", "University of California, Berkeley", "Chapman University"};
     List<UniversityModel> universityList = new ArrayList<>();    //vector holding universities. Change to firebase for classes
 
 
