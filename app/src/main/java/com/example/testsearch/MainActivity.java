@@ -23,7 +23,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity /*implements AdapterView.OnItemClickListener*/ {
+public class MainActivity extends AppCompatActivity {
 
     ListView lvUniversities;
     CustomAdapter universityAdapter;
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity /*implements AdapterView.OnI
 
         universityAdapter = new CustomAdapter(universityList, this);
         lvUniversities.setAdapter(universityAdapter);
-        //lvUniversities.setOnItemClickListener(this);
     }
 
 
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity /*implements AdapterView.OnI
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             View view = getLayoutInflater().inflate(R.layout.row_items, null);
 
             ImageView universityView = view.findViewById(R.id.universityView);
@@ -138,6 +137,13 @@ public class MainActivity extends AppCompatActivity /*implements AdapterView.OnI
             universityView.setImageResource(universitiesFiltered.get(position).getImage());
             universityName.setText(universitiesFiltered.get(position).getName());
 
+            //get Name of University Selected ***THIS IS WHERE I STORE IN FIREBASE AND START NEXT ACTIVITY???*****
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String currentUniversity = universitiesFiltered.get(position).getName();
+                }
+            });
 
             return view;
         }
@@ -183,14 +189,4 @@ public class MainActivity extends AppCompatActivity /*implements AdapterView.OnI
             return filter;
         }
     }
-
-    /*
-    //When an list item is clicked
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {    //Recycler view onItemClick?
-        String university = ((UniversityModel)parent.getItemAtPosition(position)).getName();
-        Toast.makeText(getApplicationContext(), "Selected: " + university, Toast.LENGTH_SHORT).show();
-    }
-    */
-
 }
