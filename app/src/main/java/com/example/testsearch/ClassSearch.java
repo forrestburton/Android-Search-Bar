@@ -36,7 +36,7 @@ public class ClassSearch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classes);  //change xml file (activity_main)
+        setContentView(R.layout.activity_class_search);  //change xml file (activity_main)
 
         lvClasses = findViewById(R.id.lvClasses);    //need xml file  (lvUniversities)
 
