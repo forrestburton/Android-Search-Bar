@@ -1,24 +1,20 @@
 package com.example.testsearch;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +25,8 @@ public class ClassSearch extends AppCompatActivity {
     CustomAdapter classAdapter;
 
     String codes[] = {"1111", "2222", "7777"};
-    String names[] = {"CS 31,", "CS 32", "PHIL 7"};
-    List<ClassModel> classList = new ArrayList<>();    //vector holding universities. Change to firebase for classes
+    String names[] = {"CS 31", "CS 32", "PHIL 7"};
+    List<ClassModel> classList = new ArrayList<>();    //Change to firebase for classes
 
 
     @Override
@@ -118,7 +114,7 @@ public class ClassSearch extends AppCompatActivity {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            View view = getLayoutInflater().inflate(R.layout.row_items, null);
+            View view = getLayoutInflater().inflate(R.layout.class_row_items, null);
 
             TextView classCode = view.findViewById(R.id.classCode);  //change in xml file (universityView)
             TextView className = view.findViewById(R.id.className);  //change in xml file (className)
@@ -126,11 +122,10 @@ public class ClassSearch extends AppCompatActivity {
             classCode.setText(classesFiltered.get(position).getClassCode());
             className.setText(classesFiltered.get(position).getName());
 
-            //get Name of University Selected ***THIS IS WHERE I STORE IN FIREBASE AND START NEXT ACTIVITY???*****
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String currentUniversity = classesFiltered.get(position).getName();
+                   // String currentUniversity = classesFiltered.get(position).getName();
                 }
             });
 
