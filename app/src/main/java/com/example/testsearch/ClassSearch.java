@@ -23,7 +23,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ClassSearch extends AppCompatActivity {
 
     ListView lvClasses;
     CustomAdapter classAdapter;
@@ -120,11 +120,11 @@ public class MainActivity extends AppCompatActivity {
         public View getView(final int position, View convertView, ViewGroup parent) {
             View view = getLayoutInflater().inflate(R.layout.row_items, null);
 
-            ImageView universityView = view.findViewById(R.id.classView);  //change in xml file (universityView)
-            TextView universityName = view.findViewById(R.id.className);  //change in xml file (className)
+            TextView classCode = view.findViewById(R.id.classCode);  //change in xml file (universityView)
+            TextView className = view.findViewById(R.id.className);  //change in xml file (className)
 
-            universityView.setImageResource(classesFiltered.get(position).getClassCode());  //LOOK at video. How is description resolved?
-            universityName.setText(classesFiltered.get(position).getName());
+            classCode.setText(classesFiltered.get(position).getClassCode());
+            className.setText(classesFiltered.get(position).getName());
 
             //get Name of University Selected ***THIS IS WHERE I STORE IN FIREBASE AND START NEXT ACTIVITY???*****
             view.setOnClickListener(new View.OnClickListener() {
