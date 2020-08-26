@@ -5,7 +5,7 @@ public class ClassModel {
     private String name;
     private String classCode;
 
-    public ClassModel(String name, String classCode) {
+    public ClassModel(String classCode, String name) {
         this.name = name;
         this.classCode = classCode;
     }

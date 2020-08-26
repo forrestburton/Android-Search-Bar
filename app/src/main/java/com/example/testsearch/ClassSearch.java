@@ -53,7 +53,7 @@ public class ClassSearch extends AppCompatActivity {
 
         MenuItem menuItem = menu.findItem(R.id.search_view);
         SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setQueryHint("Search...");
+        searchView.setQueryHint("Search by class code");
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -148,7 +148,7 @@ public class ClassSearch extends AppCompatActivity {
                         List<ClassModel> resultData = new ArrayList<>();
 
                         for (ClassModel classModel : classes) {
-                            if (classModel.getName().toLowerCase().contains(searchStr)) {
+                            if (classModel.getClassCode().toLowerCase().contains(searchStr)) {
                                 resultData.add(classModel);
                             }
                         }

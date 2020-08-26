@@ -14,6 +14,8 @@
     <TextView
         android:id="@+id/universityName"
         android:layout_marginStart="60dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
         android:text="Name"
         android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
